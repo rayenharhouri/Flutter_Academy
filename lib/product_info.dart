@@ -1,16 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:s2/home.dart';
 
 class ProductInfo extends StatelessWidget {
-  final String image;
-  final String title;
-  final int price;
-  const ProductInfo({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.price,
-  }) : super(key: key);
+  final GameData game;
+
+  const ProductInfo({Key? key, required this.game}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +16,7 @@ class ProductInfo extends StatelessWidget {
             Container(
               margin: const EdgeInsets.fromLTRB(0, 10, 20, 10),
               child: Image.asset(
-                image,
+                game.image,
                 width: 200,
                 height: 100,
               ),
@@ -32,11 +26,11 @@ class ProductInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  title,
+                  game.title,
                   style: const TextStyle(fontSize: 18),
                 ),
                 Text(
-                  "$price TND",
+                  "${game.price.toString()} TND",
                   style: const TextStyle(fontSize: 28),
                 ),
               ],

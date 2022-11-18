@@ -1,17 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class Signup extends StatelessWidget {
+class SignIn extends StatelessWidget {
   final String image;
-  const Signup({
+  const SignIn({
     Key? key,
     required this.image,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children:[ Column(
+    return ListView(children: [
+      Column(
         children: [
           Container(
             margin: const EdgeInsets.fromLTRB(10, 10, 10, 30),
@@ -22,15 +22,6 @@ class Signup extends StatelessWidget {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                // ignore: prefer_const_constructors
-                TextField(
-                  // ignore: prefer_const_constructors
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    labelText: 'UserName',
-                  ),
-                  // ignore: prefer_const_constructors
-                ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -58,24 +49,16 @@ class Signup extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                // ignore: prefer_const_constructors
-                TextField(
-                  // ignore: prefer_const_constructors
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    labelText: 'adresse de facturation',
-                  ),
-                ),
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton.icon(
                       onPressed: (() => {}),
                       label: const Text(
-                        "S'inscrire",
+                        "S'authentifier",
                         style: TextStyle(fontSize: 22),
                       ),
                       icon: const Icon(Icons.verified_user),
@@ -84,6 +67,9 @@ class Signup extends StatelessWidget {
                       width: 20,
                     ),
                     ElevatedButton.icon(
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(Colors.red)),
                       onPressed: (() => {}),
                       label: const Text(
                         "Annuler",
@@ -98,7 +84,6 @@ class Signup extends StatelessWidget {
           )
         ],
       ),
-      ]
-    );
+    ]);
   }
 }
